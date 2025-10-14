@@ -1,0 +1,19 @@
+{
+  "name": "ordoview",
+  "version": "1.0.0",
+  "description": "Ordoview",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Chris42221/OrdoView.git"
+  },
+  "author": "Timo, Christian",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Chris42221/OrdoView/issues"
+  },
+  "homepage": "https://github.com/Chris42221/OrdoView#readme"
+}
