@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/4ad4fdbf-339f-4606-89ea-85a740974f7d/resourceGroups/appsvc_linux_germanywestcentral/providers/Microsoft.Web/sites/OrdoView",
+    "appService.deploySubpath": "."
+}
