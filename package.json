@@ -17,13 +17,16 @@
 		"vite": "^7.1.7"
 	},
 	"repository": {
-    	"type": "git",
-    	"url": "git+https://github.com/Chris42221/OrdoView.git"
-  	},
+		"type": "git",
+		"url": "git+https://github.com/Chris42221/OrdoView.git"
+	},
 	"author": "Timo, Christian",
 	"license": "ISC",
- 	"bugs": {
-    	"url": "https://github.com/Chris42221/OrdoView/issues"
+	"bugs": {
+		"url": "https://github.com/Chris42221/OrdoView/issues"
 	},
-    "homepage": "https://github.com/Chris42221/OrdoView#readme"
+	"homepage": "https://github.com/Chris42221/OrdoView#readme",
+	"dependencies": {
+		"node-modules": "^1.0.1"
+	}
 }
