@@ -27,10 +27,6 @@
 	},
 	"homepage": "https://github.com/Chris42221/OrdoView#readme",
 	"dependencies": {
-<<<<<<< HEAD
 		"svelte-adapter-azure-swa": "^0.22.0"
-=======
-		"node-modules": "^1.0.1"
->>>>>>> f9cc712d2f7b79bbdec691f8d61ab4b3544ce1d8
 	}
 }
