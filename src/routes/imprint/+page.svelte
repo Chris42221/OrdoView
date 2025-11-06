@@ -1,10 +1,9 @@
 <h1>Imprint</h1>
 
-<table border="1" cellspacing="0" cellpadding="10" style="border-collapse: collapse; width: 100%;">
-  <tr style="background-color: #f2f2f2;">
-    <th style="width: 20%;">Abschnitt</th>
-    <th>Inhalt</th>
-  </tr>
+<table border="1" cellspacing="0" cellpadding="10">
+  <th>Abschnitt</th>
+  <th>Inhalt</th>
+
 
   <tr>
     <td><strong>Betreiber der Website</strong></td>
