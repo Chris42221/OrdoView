@@ -1,5 +1,14 @@
 <script>
   export let data; // enthält { stats }
+
+  const jsonStats = data.stats;
 </script>
 
-<pre>{JSON.stringify(data.stats, null, 2)}</pre>
+<!--
+Die jsonStats.users_online Zeigt die Aktuellen Online User als Zahl an zb 33,333,333 und die jsonStats.users_ingame Zeigt die User inGame an als Zahl zb 9,999,999
+-->
+<p>{jsonStats.stats.users_online}</p>
+<p>{jsonStats.stats.users_ingame}</p>
+
+<p>{jsonStats.clientStats.applist.apps}</p>
+
