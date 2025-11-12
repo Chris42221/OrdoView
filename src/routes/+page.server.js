@@ -3,7 +3,9 @@ import { error } from '@sveltejs/kit';
 
 export async function load({ fetch }) {
   const resStats = await fetch('https://www.valvesoftware.com/about/stats');
-  const resClientStats = await fetch('https://api.steampowered.com/ISteamApps/GetAppList/v1');
+
+  const formData = await Request.formData();
+  const resClientStats = await fetch(`https://steamcommunity.com/actions/SearchApps/${}`);
 
   if (!resStats.ok) {
     // Versuche, die upstream-Antwort zu lesen (falls vorhanden) und gebe nützliche Debug-Informationen zurück.
@@ -27,7 +29,10 @@ export async function load({ fetch }) {
 
   const statsJson = await resStats.json();
   const clientStatsJson = await resClientStats.json();
-  const json = { stats: statsJson, clientStats: clientStatsJson };
+
+
+  const json = { stats: statsJson, games: clientStatsJson };
   console.log(json);
+
   return { stats: json}; // wird als `data` an +page.svelte geliefert
 }
