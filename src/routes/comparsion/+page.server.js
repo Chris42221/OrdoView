@@ -3,7 +3,12 @@ import {KEY} from "$env/static/private"
 import { error } from '@sveltejs/kit';
 export const actions = {
 	default: async (event) => {
-		const test = await fetch(`https://api.steampowered.com/ISteamUser/GetPlayerSummaries/v2/?key=${KEY}&steamids=${}`);
+        const SteamIDFunktion = await event.request.formData()
+        const SteamID = SteamIDFunktion
+
+        console.log(SteamID)
+
+		const test = await fetch(`https://api.steampowered.com/ISteamUser/GetPlayerSummaries/v2/?key=${KEY}&steamids=${SteamID.steamid1}`);
         if(!test.ok){
             let body = null;
             try {

@@ -10,6 +10,6 @@
 		<input name="steamid1" type="steamid1">
 	</label>
 	<button>Log in</button>
-
-    <p>{data}</p>
 </form>
+
+<p>{data}</p>
