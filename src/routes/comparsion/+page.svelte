@@ -11,5 +11,3 @@
 	</label>
 	<button>Log in</button>
 </form>
-
-<p>{data}</p>
