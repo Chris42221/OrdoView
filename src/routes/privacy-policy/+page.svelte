@@ -4,6 +4,9 @@
   <tbody>
     <tr>
       <td>
+        1
+      </td>
+      <td>
         <strong>Allgemeines</strong><br>
         Der Schutz deiner persönlichen Daten ist mir ein besonderes Anliegen. Ich verarbeite deine Daten ausschließlich auf Grundlage der gesetzlichen Bestimmungen (DSGVO, TKG 2003).<br>
         In dieser Datenschutzerklärung informiere ich dich über die wichtigsten Aspekte der Datenverarbeitung im Rahmen meiner Website.
