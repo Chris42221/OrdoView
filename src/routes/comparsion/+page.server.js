@@ -8,7 +8,10 @@ export const actions = {
 
         //Übernimmt die Angaben aus dem Input
         const form = await event.request.formData();
-        const steamid1 = form.get("steamid1")
+        const steamid1 = form.get("Steamid1");
+        const steamid1ownedgamesincludefreegames = form.get("Steamid1OwnedGamesIncludeFreeGames");
+        const steamid1ownedgamesincludefreesubs = form.get("Steamid1OwnedGamesIncludeFreeSubs");
+        console.log(steamid1ownedgamesincludefreegames);
 
         //Stellt die Anfrage an Steam
 		const steamid1data = await fetch(`https://api.steampowered.com/ISteamUser/GetPlayerSummaries/v2/?key=${KEY}&steamids=${steamid1}`);
@@ -25,13 +28,44 @@ export const actions = {
         const steamid1friendlist = await fetch(`http://api.steampowered.com/ISteamUser/GetFriendList/v1/?key=${KEY}&steamid=${steamid1}`)
         if(!steamid1friendlist.ok){
             return { User1DataJson, success: false, error: true};
-            throw new Error(`Response status: ${steamid1friendlist.status}`)
+            throw new Error(`Response status: ${steamid1friendlist.status}`);
         }
+
+        const steamid1ownedgames = await fetch(`https://api.steampowered.com/IPlayerService/GetOwnedGames/v1/?key=${KEY}&steamid=${steamid1}&include_appinfo=true&include_played_free_games=${steamid1ownedgamesincludefreegames}&include_free_sub=${steamid1ownedgamesincludefreesubs}&include_extended_appinfo=true`);
+        if(!steamid1ownedgames.ok){
+            return { User1DataJson, success: false, error: true};
+            throw new Error(`Response status: ${steamid1ownedgames.status}`);
+        }
+
+        const steamid1badges = await fetch(`https://api.steampowered.com/IPlayerService/GetBadges/v1/?key=${KEY}&steamid=${steamid1}`);
+        if(!steamid1badges.ok){
+            return { User1DataJson, success: false, error: true};
+            throw new Error(`Response status: ${steamid1badges.status}`);
+        }
+
+        const steamid1grouplist = await fetch(`https://api.steampowered.com/ISteamUser/GetUserGroupList/v1/?key=${KEY}&steamid=${steamid1}`);
+        if(!steamid1grouplist.ok){
+            return { User1DataJson, success: false, error: true};
+            throw new Error(`Response status: ${steamid1grouplist.status}`);
+        }
+
+        const steamid1recentlyplayedgames = await fetch(`https://api.steampowered.com/IPlayerService/GetRecentlyPlayedGames/v1?key=${KEY}&steamid=${steamid1}&count=3`);
+        if(!steamid1recentlyplayedgames.ok){
+            return { User1DataJson, success: false, error: true};
+            throw new Error(`Response status: ${steamid1recentlyplayedgames.status}`);
+        }
+
 
         //Wandelt die Daten in JSON um
         const User1Data = await steamid1data.json();
         const User1Level = await steamid1level.json();
         const User1FriendList = await steamid1friendlist.json();
+        const User1OwnedGames = await steamid1ownedgames.json();
+        const User1Badges = await steamid1badges.json();
+        const User1BadgesLength = await User1Badges.response.badges.length;
+        const User1GroupList = await steamid1grouplist.json();
+        const User1RecentPlayedGames = await steamid1recentlyplayedgames.json();
+        
 
             //Gibt für jeden Freund in der FreundesListe die Daten aus
             const User1FreindsDataArray = [];
@@ -45,11 +79,18 @@ export const actions = {
                 const User1FreindsData = await steamid1friendsdata.json();
                 User1FreindsDataArray.push(User1FreindsData);
             }
-            console.log(User1FreindsDataArray);
-            console.log(User1FreindsDataArray.length);
 
 
-        User1DataJson = { stats: User1Data, level: User1Level, friendlist: User1FriendList, friendsdata: User1FreindsDataArray};
+        User1DataJson = {
+            stats: User1Data,
+            level: User1Level,
+            friendlist: User1FriendList,
+            friendsdata: User1FreindsDataArray,
+            ownedgames: User1OwnedGames,
+            badgeslength: User1BadgesLength,
+            grouplist: User1GroupList,
+            recentplayedgames: User1RecentPlayedGames
+        };
 
 
         console.log(User1DataJson);
