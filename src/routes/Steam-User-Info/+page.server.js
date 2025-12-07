@@ -55,6 +55,7 @@ export const actions = {
             throw new Error(`Response status: ${steamid1recentlyplayedgames.status}`);
         }
 
+        const steamid1wishlist = await fetch(`https://api.steampowered.com/IWishlistService/GetWishlist/v1/?key=${KEY}&steamid=${steamid1}`)
 
         //Wandelt die Daten in JSON um
         const User1Data = await steamid1data.json();
@@ -65,6 +66,7 @@ export const actions = {
         const User1BadgesLength = await User1Badges.response.badges.length;
         const User1GroupList = await steamid1grouplist.json();
         const User1RecentPlayedGames = await steamid1recentlyplayedgames.json();
+        const User1Wishlist = await steamid1wishlist.json();
         
 
             //Gibt für jeden Freund in der FreundesListe die Daten aus
@@ -89,7 +91,8 @@ export const actions = {
             ownedgames: User1OwnedGames,
             badgeslength: User1BadgesLength,
             grouplist: User1GroupList,
-            recentplayedgames: User1RecentPlayedGames
+            recentplayedgames: User1RecentPlayedGames,
+            wishlist:User1Wishlist 
         };
 
 
