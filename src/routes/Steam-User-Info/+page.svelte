@@ -49,7 +49,7 @@ Der Ihanlt in den ifs kann geändert werden
 				<div class="col-md-8">
 				<div class="card-body">
 					<h5 class="card-title">Steam User Info</h5>
-					<a href={form?.User1DataJson?.stats.response.players[0].profileurl}><p class="card-text fs-5">{form?.User1DataJson?.stats.response.players[0].steamid}</p></a>
+					<a href={form?.User1DataJson?.stats.response.players[0].profileurl} target="_blank"><p class="card-text fs-5">{form?.User1DataJson?.stats.response.players[0].steamid}</p></a>
 					<p class="card-text fs-5">{form?.User1DataJson?.stats.response.players[0].personaname}</p>
 					<p class="card-text"><small class="text-body-secondary">{form?.User1DataJson?.stats.response.players[0].realname}</small></p>
 					<p class="card-text fs-5">Location: {form?.User1DataJson?.stats.response.players[0].loccountrycode}</p>
@@ -90,7 +90,7 @@ Der Ihanlt in den ifs kann geändert werden
 											<p>
 												Steamid: {friend.response.players[0].steamid} | 
 												Name: {friend.response.players[0].realname} , {friend.response.players[0].personaname} | 
-												<a href={friend.response.players[0].profileurl} >
+												<a href={friend.response.players[0].profileurl} target="_blank">
 													<img src={friend.response.players[0].avatarmedium} alt="Profilbild">
 												</a>
 											</p>
@@ -141,7 +141,7 @@ Der Ihanlt in den ifs kann geändert werden
 		</div>
 		<!---->
 		<div class="carousel-item">
-							<div class="card mb-3 bg-secondary" 
+			<div class="card mb-3 bg-secondary" 
 			style="
 			max-width: 1620px;
 			max-height: 500px;
@@ -152,7 +152,10 @@ Der Ihanlt in den ifs kann geändert werden
 					<div class="card-body">		
 						<div class="row">
 							{#each form?.User1DataJson?.recentplayedgames.response.games as game}
-								<div class="card w-75 mb-3 bg-secondary" >
+								<div class="card w-75 mb-3 bg-secondary" 
+										style="
+										
+										">
 									<div class="card-body">
 										<h5 class="card-title">{game.name}</h5>
 										<table>
@@ -184,7 +187,7 @@ Der Ihanlt in den ifs kann geändert werden
 												<tr>
 													<td>
 														<img src="{form?.User1DataJson?.recentplayedgamesarray[form?.User1DataJson?.recentplayedgames.response.games.indexOf(game)][game.appid]?.data?.capsule_image}" 
-														alt="{form?.User1DataJson?.recentplayedgamesarray[form?.User1DataJson?.recentplayedgames.response.games.indexOf(game)][game.appid]?.data?.name} capsule_image">
+														alt="{form?.User1DataJson?.recentplayedgamesarray[form?.User1DataJson?.recentplayedgames.response.games.indexOf(game)][game.appid]?.data?.name} capsule image">
 													</td>
 												</tr>
 											</tbody>
@@ -221,6 +224,11 @@ Der Ihanlt in den ifs kann geändert werden
 												<p>Name: {game.appid}</p>
 												<p>{form?.User1DataJson?.wishlistarray[form?.User1DataJson?.wishlist.response.items.indexOf(game)][game.appid]?.data?.type}</p>
 												<p>{form?.User1DataJson?.wishlistarray[form?.User1DataJson?.wishlist.response.items.indexOf(game)][game.appid]?.data?.name}</p>
+												<p>{form?.User1DataJson?.wishlistarray[form?.User1DataJson?.wishlist.response.items.indexOf(game)][game.appid]?.data?.price_overview?.final_formatted}</p>
+												<a href="https://store.steampowered.com/app/{game.appid}" target="_blank">
+													<img src="{form?.User1DataJson?.wishlistarray[form?.User1DataJson?.wishlist.response.items.indexOf(game)][game.appid]?.data?.capsule_image}" 
+													alt="{form?.User1DataJson?.wishlistarray[form?.User1DataJson?.wishlist.response.items.indexOf(game)][game.appid]?.data?.name} capsule image">
+												</a>
 											</h4>
 										{/each}
 								</div>
