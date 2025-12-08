@@ -82,6 +82,32 @@ export const actions = {
                 User1FreindsDataArray.push(User1FreindsData);
             }
 
+            //Gibt die Daten für die Zulest gespielten Spiele aus
+            const User1RecentPlayedGamesArrayInfo = [];
+            for (let index = 0; index < User1RecentPlayedGames.response.games.length; index++) {
+                const gameinfo = User1RecentPlayedGames.response.games[index].appid;
+                const steamid1recentlyplayedgamesinfo = await fetch(`https://store.steampowered.com/api/appdetails/?appids=${gameinfo}`);
+                if(!steamid1recentlyplayedgamesinfo.ok){
+                    throw new Error(`Response status: ${steamid1recentlyplayedgamesinfo.status}`);
+                }
+
+                const User1RecentPlayedGamesInfo = await steamid1recentlyplayedgamesinfo.json();
+                User1RecentPlayedGamesArrayInfo.push(User1RecentPlayedGamesInfo);
+            }
+            
+            //
+
+            const User1WishlistArray = [];
+            for (let index = 0; index < User1Wishlist.response.items.length; index++) {
+                const wishlistgameinfo = User1Wishlist.response.items[index].appid;
+                const steamid1wishlistgameinfo = await fetch(`https://store.steampowered.com/api/appdetails/?appids=${wishlistgameinfo}`);
+                if(!steamid1wishlistgameinfo.ok){
+                    throw new Error(`Response status: ${steamid1wishlistgameinfo.status}`);
+                }
+                const User1WishlistGameInfo = await steamid1wishlistgameinfo.json();
+                User1WishlistArray.push(User1WishlistGameInfo);
+            }
+            console.log(User1WishlistArray);
 
         User1DataJson = {
             stats: User1Data,
@@ -92,7 +118,9 @@ export const actions = {
             badgeslength: User1BadgesLength,
             grouplist: User1GroupList,
             recentplayedgames: User1RecentPlayedGames,
-            wishlist:User1Wishlist 
+            recentplayedgamesarray: User1RecentPlayedGamesArrayInfo,
+            wishlist: User1Wishlist,
+            wishlistarray: User1WishlistArray,
         };
 
 

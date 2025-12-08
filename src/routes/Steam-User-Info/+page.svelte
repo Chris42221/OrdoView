@@ -173,6 +173,20 @@ Der Ihanlt in den ifs kann geändert werden
 														<p class="card-text">{game.playtime_forever/60}h</p>
 													</td>
 												</tr>
+												<tr>
+													<td>
+														<p class="card-text">Release Date: </p>
+													</td>
+													<td>
+														<p class="card-text">{form?.User1DataJson?.recentplayedgamesarray[form?.User1DataJson?.recentplayedgames.response.games.indexOf(game)][game.appid]?.data?.release_date.date}</p>
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<img src="{form?.User1DataJson?.recentplayedgamesarray[form?.User1DataJson?.recentplayedgames.response.games.indexOf(game)][game.appid]?.data?.capsule_image}" 
+														alt="{form?.User1DataJson?.recentplayedgamesarray[form?.User1DataJson?.recentplayedgames.response.games.indexOf(game)][game.appid]?.data?.name} capsule_image">
+													</td>
+												</tr>
 											</tbody>
 										</table>
 									</div>
@@ -205,6 +219,8 @@ Der Ihanlt in den ifs kann geändert werden
 										{#each form?.User1DataJson?.wishlist.response.items as game}
 											<h4 id="simple-list-item-{form?.User1DataJson?.wishlist.response.items.indexOf(game)}">
 												<p>Name: {game.appid}</p>
+												<p>{form?.User1DataJson?.wishlistarray[form?.User1DataJson?.wishlist.response.items.indexOf(game)][game.appid]?.data?.type}</p>
+												<p>{form?.User1DataJson?.wishlistarray[form?.User1DataJson?.wishlist.response.items.indexOf(game)][game.appid]?.data?.name}</p>
 											</h4>
 										{/each}
 								</div>
