@@ -24,3 +24,19 @@ export async function load({ fetch }) {
 
   return { stats: json}; // wird als `data` an +page.svelte geliefert
 }
+
+/** @satisfies {import('./$types').Actions} */
+export const actions = {
+	SearchApps: async (event) => {
+		const form = await event.request.formData();
+    const appname = form.get("AppName");
+
+    console.log(appname)
+    const appnameconvertet = appname?.slice();
+
+    console.log(appnameconvertet)
+
+
+    const getapp = await fetch(`https://steamcommunity.com/actions/SearchApps/team%20fortress%202`);
+	}
+};
