@@ -74,7 +74,6 @@ td:first-child {
     background-color: #000000;
     font-size: 1.1rem;
     line-height: 1.6;
-    margin: ;              /* kein Abstand oben */
     width: 20;            /* volle Breite */
     text-align: left;
     padding: 15px 0;        /* Platz oben/unten */

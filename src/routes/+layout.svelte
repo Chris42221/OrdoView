@@ -8,10 +8,6 @@
 	<link rel="icon" href={favicon} />
 </svelte:head>
 
-<svelte:head>
-    <link rel="icon" href={favicon} />
-</svelte:head>
-
 <nav>
 	<img src="{favicon}" alt="logo" width="100" id="logo">
 	<a href="/">OrdoView</a>
