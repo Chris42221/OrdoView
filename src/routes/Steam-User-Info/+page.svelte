@@ -148,11 +148,13 @@ Der Ihanlt in den ifs kann geändert werden
             {#each form?.User1DataJson?.wishlist.response.items as game}
               <div class="card mb-3 bg-secondary">
                 <div class="card-body">
-                  <h6 class="card-title">{form?.User1DataJson?.wishlistarray[form?.User1DataJson?.wishlist.response.items.indexOf(game)][game.appid]?.data?.name}</h6>
-                  <p>{form?.User1DataJson?.wishlistarray[form?.User1DataJson?.wishlist.response.items.indexOf(game)][game.appid]?.data?.price_overview?.final_formatted}</p>
-                  <a href="https://store.steampowered.com/app/{game.appid}" target="_blank">
-                    <img src="{form?.User1DataJson?.wishlistarray[form?.User1DataJson?.wishlist.response.items.indexOf(game)][game.appid]?.data?.capsule_image}" alt="{form?.User1DataJson?.wishlistarray[form?.User1DataJson?.wishlist.response.items.indexOf(game)][game.appid]?.data?.name} Capsule Image" class="img-fluid">
-                  </a>
+                	<h6 class="card-title">{form?.User1DataJson?.wishlistarray[form?.User1DataJson?.wishlist.response.items.indexOf(game)][game.appid]?.data?.name}</h6>
+					<p>{form?.User1DataJson?.wishlistarray[form?.User1DataJson?.wishlist.response.items.indexOf(game)][game.appid]?.data?.type}</p>
+					<p>{form?.User1DataJson?.wishlistarray[form?.User1DataJson?.wishlist.response.items.indexOf(game)][game.appid]?.data?.name}</p>
+					<p>{form?.User1DataJson?.wishlistarray[form?.User1DataJson?.wishlist.response.items.indexOf(game)][game.appid]?.data?.price_overview?.final_formatted}</p>
+                	<a href="https://store.steampowered.com/app/{game.appid}" target="_blank">
+                    	<img src="{form?.User1DataJson?.wishlistarray[form?.User1DataJson?.wishlist.response.items.indexOf(game)][game.appid]?.data?.capsule_image}" alt="{form?.User1DataJson?.wishlistarray[form?.User1DataJson?.wishlist.response.items.indexOf(game)][game.appid]?.data?.name} Capsule Image" class="img-fluid">
+                	</a>
                 </div>
               </div>
             {/each}
