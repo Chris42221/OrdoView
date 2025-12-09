@@ -17,7 +17,7 @@
 	<a href="/">OrdoView</a>
 	<a href="/imprint">Imprint</a>
 	<a href="/privacy-policy">Privacy Policy</a>
-	<a href="/comparsion">Comparsion</a>
+	<a href="/Steam-User-Info">Steam-User-Info</a>
 </nav>
 
 {@render children?.()}
