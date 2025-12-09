@@ -39,7 +39,7 @@ Der Ihanlt in den ifs kann geändert werden
         <div class="card mb-3 bg-dark text-white" style="max-width: 1620px; max-height: 500px; height: 500px;">
           <div class="row g-0">
             <div class="col-md-4">
-              <img src="{form?.User1DataJson?.stats.response.players[0].avatarmedium}" class="img-fluid rounded-start" alt="Profile Picture">
+              <img src="{form?.User1DataJson?.stats.response.players[0].avatarmedium}" class="img-fluid rounded-start" alt="ProfilePicture">
             </div>
             <div class="col-md-8">
               <div class="card-body">
@@ -70,7 +70,7 @@ Der Ihanlt in den ifs kann geändert werden
               {#each form?.User1DataJson?.friendsdata as friend (friend.response.players[0].steamid)}
                 <a href="{friend.response.players[0].profileurl}" class="list-group-item list-group-item-action bg-dark text-light" target="_blank">
                   <div class="d-flex justify-content-between align-items-center">
-                    <img src="{friend.response.players[0].avatarmedium}" alt="Profile Picture" class="img-fluid rounded-circle" style="width: 40px; height: 40px;">
+                    <img src="{friend.response.players[0].avatarmedium}" alt="ProfilePicture" class="img-fluid rounded-circle" style="width: 40px; height: 40px;">
                     <div class="ms-3">
                       <p class="m-0 fs-5">{friend.response.players[0].personaname}</p>
                       <small>{friend.response.players[0].realname}</small>

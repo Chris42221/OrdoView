@@ -1,17 +1,18 @@
-<script>
-    import { online } from 'svelte/reactivity/window';
+<script lang="ts">
+	import { enhance } from '$app/forms';
+	export let data;
+	export let form;
 
-  export let data; // enthält { stats }
+	let formEL: HTMLFormElement;
 
   const jsonStats = data.stats;
 </script>
 
-<form method="POST" action="?/SearchApps">
+<form method="POST" action="?/SearchApps" use:enhance bind:this={formEL}>
 	<label>
 		Password
-		<input name="AppName" type="AppName">
+		<input id="AppName" name="AppName" type="text" on:change={() => formEL.requestSubmit()} value={form?.appname}>
 	</label>
-	<button>Log in</button>
 </form>
 
 <!--
@@ -20,3 +21,11 @@ Die jsonStats.users_online Zeigt die Aktuellen Online User als Zahl an zb 33,333
 <h2>Spieler online: {jsonStats.stats.users_online}</h2>
 <h2>Spieler inGame: {jsonStats.stats.users_ingame}</h2>
 
+{#if form?.success}
+	{#each form?.AppSearchResults.getappresults as app}
+		<p>{app.appid}</p>
+		<p>{app.name}</p>
+		<img src="{app.icon}" alt="gameicon">
+		<img src="{app.logo}" alt="gamelogo">
+	{/each}
+{/if}
