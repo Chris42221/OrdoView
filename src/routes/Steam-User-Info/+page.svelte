@@ -68,7 +68,7 @@ Der Ihanlt in den ifs kann geändert werden
             <h5 class="card-title">Friends List</h5>
             <div class="list-group">
               {#each form?.User1DataJson?.friendsdata as friend (friend.response.players[0].steamid)}
-                <a href="{friend.response.players[0].profileurl}" class="list-group-item list-group-item-action bg-dark text-light">
+                <a href="{friend.response.players[0].profileurl}" class="list-group-item list-group-item-action bg-dark text-light" target="_blank">
                   <div class="d-flex justify-content-between align-items-center">
                     <img src="{friend.response.players[0].avatarmedium}" alt="Profile Picture" class="img-fluid rounded-circle" style="width: 40px; height: 40px;">
                     <div class="ms-3">
