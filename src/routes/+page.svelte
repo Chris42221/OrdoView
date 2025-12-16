@@ -1,15 +1,13 @@
-<script lang="ts">
+<script>
 	export let data;
 	export let form;
-
-	let formEL: HTMLFormElement;
 
   const jsonStats = data.stats;
 </script>
 
-<form method="POST" action="?/SearchApps">
+<form rm method="POST" action="/searchapps">
 	<label>
-		Password
+		<p class="da">Games: </p>
 		<input id="AppName" name="AppName" type="text">
 		<button type="submit">Search</button>
 	</label>
