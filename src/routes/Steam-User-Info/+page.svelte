@@ -8,23 +8,21 @@
 <form method="POST" class="white-text">
 
   	<label class="white-text">
-    <br>
-		show games owned through free games:
-		<input type="checkbox" name="Steamid1OwnedGamesIncludeFreeGames" value="true">
-    <br>
-    show games owned through free subscriptions:
-		<input type="checkbox" name="Steamid1OwnedGamesIncludeFreeSubs" value="true">
+		<p>show games owned through free games:
+		<input type="checkbox" name="Steamid1OwnedGamesIncludeFreeGames" value="true"></p>
+    <p>show games owned through free subscriptions:
+		<input type="checkbox" name="Steamid1OwnedGamesIncludeFreeSubs" value="true"></p>
 	</label>
 
   <br>
   <br>
 
 	<label class="white-text">
-		SteamID
+		<p>SteamID</p>
 		<input id="Steamid1" name="Steamid1" type="text" required >
 	</label>
 	<button>Search</button>
-  <br>
+  
 
 {#if !form?.success && !form?.error}
   <p class="text-light">Enter your SteamID in the input field</p>
