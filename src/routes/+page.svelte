@@ -5,7 +5,7 @@
   const jsonStats = data.stats;
 </script>
 
-<form rm method="POST" action="/searchapps">
+<form method="POST" action="/searchapps">
 	<label>
 		<p class="da">Games: </p>
 		<input id="AppName" name="AppName" type="text">
