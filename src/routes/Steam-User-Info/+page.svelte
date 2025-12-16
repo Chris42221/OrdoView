@@ -18,8 +18,8 @@
   <br>
 
 	<label class="white-text">
-		<p>SteamID</p>
-		<input id="Steamid1" name="Steamid1" type="text" required >
+		<p>SteamID
+		<input id="Steamid1" name="Steamid1" type="text" required ></p>
 	</label>
 	<button>Search</button>
   
