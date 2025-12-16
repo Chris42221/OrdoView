@@ -1,5 +1,4 @@
 <script lang="ts">
-	import { enhance } from '$app/forms';
 	export let data;
 	export let form;
 
@@ -8,10 +7,11 @@
   const jsonStats = data.stats;
 </script>
 
-<form method="POST" action="?/SearchApps" use:enhance bind:this={formEL}>
+<form method="POST" action="?/SearchApps">
 	<label>
 		Password
-		<input id="AppName" name="AppName" type="text" on:change={() => formEL.requestSubmit()} value={form?.appname}>
+		<input id="AppName" name="AppName" type="text">
+		<button type="submit">Search</button>
 	</label>
 </form>
 
