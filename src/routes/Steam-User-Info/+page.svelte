@@ -8,9 +8,9 @@
 <form method="POST" class="white-text">
 
   	<label class="white-text">
-		<p>show games owned through free games:
+		<p class="white-text">show games owned through free games:
 		<input type="checkbox" name="Steamid1OwnedGamesIncludeFreeGames" value="true"></p>
-    <p>show games owned through free subscriptions:
+    <p class="white-text">show games owned through free subscriptions:
 		<input type="checkbox" name="Steamid1OwnedGamesIncludeFreeSubs" value="true"></p>
 	</label>
 
@@ -18,7 +18,7 @@
   <br>
 
 	<label class="white-text">
-		<p>SteamID
+		<p class="white-text">SteamID
 		<input id="Steamid1" name="Steamid1" type="text" required ></p>
 	</label>
 	<button>Search</button>
