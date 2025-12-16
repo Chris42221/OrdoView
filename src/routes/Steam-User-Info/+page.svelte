@@ -5,27 +5,39 @@
 </script>
 
 
-<form method="POST">
+<form method="POST" class="">
+
+  	<label>
+    <br>
+		show games owned through free games:
+		<input type="checkbox" name="Steamid1OwnedGamesIncludeFreeGames" value="true">
+    <br>
+    show games owned through free subscriptions:
+		<input type="checkbox" name="Steamid1OwnedGamesIncludeFreeSubs" value="true">
+	</label>
+
+  <br>
+  <br>
+
 	<label>
 		SteamID
 		<input id="Steamid1" name="Steamid1" type="text" required >
 	</label>
-	<button>Suchen</button>
+	<button>Search</button>
+  <br>
 
-	<label>
-		OwnedGames Option
-		<input type="checkbox" name="Steamid1OwnedGamesIncludeFreeGames" value="true">
-		<input type="checkbox" name="Steamid1OwnedGamesIncludeFreeSubs" value="true">
-	</label>
+{#if !form?.success && !form?.error}
+  <p class="text-light">Enter your SteamID in the input field</p>
+{/if}
+
+
 </form>
 
 <!--
 Der Ihanlt in den ifs kann geändert werden
 -->
 
-{#if !form?.success && !form?.error}
-  <p class="text-light">Enter your SteamID in the input field</p>
-{/if}
+
 
 {#if form?.error}
   <p class="text-danger fs-4">Invalid Inputs (┬┬﹏┬┬)</p>
