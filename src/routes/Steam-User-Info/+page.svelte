@@ -7,7 +7,7 @@
 
 <form method="POST" class="white-text">
 
-  	<label>
+  	<label class="white-text">
     <br>
 		show games owned through free games:
 		<input type="checkbox" name="Steamid1OwnedGamesIncludeFreeGames" value="true">
@@ -19,7 +19,7 @@
   <br>
   <br>
 
-	<label>
+	<label class="white-text">
 		SteamID
 		<input id="Steamid1" name="Steamid1" type="text" required >
 	</label>
