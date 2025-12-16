@@ -75,3 +75,9 @@ td:first-child {
 .da {
     color: white;
 }
+
+.form_für_steam_user_info {
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}

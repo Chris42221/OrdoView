@@ -5,12 +5,12 @@
 </script>
 
 
-<form method="POST" class="white-text">
+<form method="POST" class="form_für_steam_user_info">
 
   	<label class="white-text">
-		<p class="da">show games owned through free games:
+		<p class="da">Show games owned through free games:
 		<input type="checkbox" name="Steamid1OwnedGamesIncludeFreeGames" value="true"></p>
-    <p class="da">show games owned through free subscriptions:
+    <p class="da">Show games owned through free subscriptions:
 		<input type="checkbox" name="Steamid1OwnedGamesIncludeFreeSubs" value="true"></p>
 	</label>
 
@@ -111,44 +111,44 @@ Der Ihanlt in den ifs kann geändert werden
 
       <!-- Recently Played Games -->
       <div class="carousel-item">
-        <div class="card mb-3 bg-dark text-white" style="max-width: 1620px; max-height: 500px; height: 500px;">
-          <div class="card-body">
-            <h5 class="card-title">Recently Played Games</h5>
-            <div class="row">
-              {#each form?.User1DataJson?.recentplayedgames.response.games as game}
-                <div class="col-md-6 mb-3">
-                  <div class="card bg-secondary">
-                    <div class="card-body">
-                      <h6 class="card-title">{game.name}</h6>
-                      <table class="table table-dark">
-                        <tbody>
-                          <tr>
-                            <td>Playtime last 2 Weeks:</td>
-                            <td>{game.playtime_2weeks / 60}h</td>
-                          </tr>
-                          <tr>
-                            <td>Total Playtime:</td>
-                            <td>{game.playtime_forever / 60}h</td>
-                          </tr>
-                          <tr>
-                            <td>Release Date:</td>
-                            <td>{form?.User1DataJson?.recentplayedgamesarray[form?.User1DataJson?.recentplayedgames.response.games.indexOf(game)][game.appid]?.data?.release_date.date}</td>
-                          </tr>
-                          <tr>
-                            <td>
-                              <img src="{form?.User1DataJson?.recentplayedgamesarray[form?.User1DataJson?.recentplayedgames.response.games.indexOf(game)][game.appid]?.data?.capsule_image}" alt="{game.name} Capsule" class="img-fluid">
-                            </td>
-                          </tr>
-                        </tbody>
-                      </table>
-                    </div>
-                  </div>
-                </div>
-              {/each}
+  <div class="card mb-3 bg-dark text-white" style="max-width: 1620px; height: 500px;">
+    <div class="card-body">
+      <h5 class="card-title">Recently Played Games</h5>
+      <div class="row overflow-auto" style="max-height: 400px;"> <!-- Scrollbereich -->
+        {#each form?.User1DataJson?.recentplayedgames.response.games as game}
+          <div class="col-md-6 mb-3">
+            <div class="card bg-secondary">
+              <div class="card-body">
+                <h6 class="card-title">{game.name}</h6>
+                <table class="table table-dark">
+                  <tbody>
+                    <tr>
+                      <td>Playtime last 2 Weeks:</td>
+                      <td>{game.playtime_2weeks / 60}h</td>
+                    </tr>
+                    <tr>
+                      <td>Total Playtime:</td>
+                      <td>{game.playtime_forever / 60}h</td>
+                    </tr>
+                    <tr>
+                      <td>Release Date:</td>
+                      <td>{form?.User1DataJson?.recentplayedgamesarray[form?.User1DataJson?.recentplayedgames.response.games.indexOf(game)][game.appid]?.data?.release_date.date}</td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <img src="{form?.User1DataJson?.recentplayedgamesarray[form?.User1DataJson?.recentplayedgames.response.games.indexOf(game)][game.appid]?.data?.capsule_image}" alt="{game.name} Capsule" class="img-fluid">
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
             </div>
           </div>
-        </div>
+        {/each}
       </div>
+    </div>
+  </div>
+</div>
 
       <!-- Wishlist -->
       <div class="carousel-item">
