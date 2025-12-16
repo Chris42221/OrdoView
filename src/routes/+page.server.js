@@ -1,6 +1,7 @@
 // src/routes/+page.server.js
 import { error } from '@sveltejs/kit';
 
+// @ts-ignore
 export async function load({ fetch }) {
   const resStats = await fetch('https://www.valvesoftware.com/about/stats');
 
@@ -24,3 +25,29 @@ export async function load({ fetch }) {
 
   return { stats: json}; // wird als `data` an +page.svelte geliefert
 }
+
+/** @satisfies {import('./$types').Actions} */
+export const actions = {
+	SearchApps: async (event) => {
+		const form = await event.request.formData();
+    const appname = form.get("AppName")?.toString();
+
+    console.log(appname);
+
+    const appnameconverted = appname?.replace(" ", "%20");
+   
+    const getapp = await fetch(`https://steamcommunity.com/actions/SearchApps/${appnameconverted}`);
+    if(!getapp.ok){
+      throw new Error(`Response status: ${getapp.status}`);
+    }
+
+    const GetAppResults= await getapp.json();
+    console.log(GetAppResults);
+
+    const AppSearchResults = {
+      getappresults: GetAppResults
+    }
+
+    return{AppSearchResults, success: true, appname: appname};
+	}
+};
