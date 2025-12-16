@@ -5,7 +5,7 @@
 </script>
 
 
-<form method="POST" class="">
+<form method="POST" class="white-text">
 
   	<label>
     <br>
