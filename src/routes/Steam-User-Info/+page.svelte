@@ -42,7 +42,7 @@ Der Ihanlt in den ifs kann geändert werden
 {/if}
 
 {#if form?.success}
-  <div id="carouselExample" class="carousel slide">
+  <div id="carouselExample" class="carousel slide; center" >
     <div class="carousel-inner">
       <!-- User Info Card -->
       <div class="carousel-item active">
