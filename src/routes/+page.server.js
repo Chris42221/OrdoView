@@ -28,7 +28,7 @@ export async function load({ fetch }) {
 
 /** @satisfies {import('./$types').Actions} */
 export const actions = {
-	searchapps: async (event) => {
+	SearchApps: async (event) => {
 		const form = await event.request.formData();
     const appname = form.get("AppName")?.toString();
 
@@ -49,5 +49,10 @@ export const actions = {
     }
 
     return{AppSearchResults, success: true,};
-	}
+	},
+  GetAppData: async (event)=>{
+    console.log("Test");
+    
+    
+  }
 };
