@@ -42,11 +42,11 @@ Der Ihanlt in den ifs kann geändert werden
 {/if}
 
 {#if form?.success}
-  <div id="carouselExample" class="carousel slide">
+  <div id="carouselExample" class="carousel slide; " >
     <div class="carousel-inner">
       <!-- User Info Card -->
       <div class="carousel-item active">
-        <div class="card mb-3 bg-dark text-white" style="max-width: 1620px; max-height: 500px; height: 500px;">
+        <div class="card mb-3 bg-dark text-white" style="width: 100vw; max-height: 500px; height: 500px;">
           <div class="row g-0">
             <div class="col-md-4">
               <img src="{form?.User1DataJson?.stats.response.players[0].avatarmedium}" class="img-fluid rounded-start" alt="ProfilePicture">
@@ -73,7 +73,7 @@ Der Ihanlt in den ifs kann geändert werden
 
       <!-- Friends List -->
       <div class="carousel-item">
-        <div class="card mb-3 bg-dark text-white" style="max-width: 1620px; max-height: 500px; height: 500px; overflow-y: scroll;">
+        <div class="card mb-3 bg-dark text-white" style="width: 100vw; max-height: 500px; height: 500px; overflow-y: scroll;">
           <div class="card-body">
             <h5 class="card-title">Friends List</h5>
             <div class="list-group">
@@ -95,7 +95,7 @@ Der Ihanlt in den ifs kann geändert werden
 
       <!-- Games List -->
       <div class="carousel-item">
-        <div class="card mb-3 bg-dark text-white" style="max-width: 1620px; max-height: 500px; height: 500px; overflow-y: scroll;">
+        <div class="card mb-3 bg-dark text-white" style="width: 100vw; max-height: 500px; height: 500px; overflow-y: scroll;">
           <div class="card-body">
             <h5 class="card-title">Games Owned</h5>
             {#each form?.User1DataJson?.ownedgames.response.games as game}
@@ -111,7 +111,7 @@ Der Ihanlt in den ifs kann geändert werden
 
         <!-- Recently Played Games -->
         <div class="carousel-item">
-    <div class="card mb-3 bg-dark text-white" style="max-width: 1620px; height: 500px;">
+    <div class="card mb-3 bg-dark text-white" style="width: 100vw; height: 500px;">
       <div class="card-body">
         <h5 class="card-title">Recently Played Games</h5>
         <div class="row overflow-auto" style="max-height: 400px;"> <!-- Scrollbereich -->
@@ -152,7 +152,7 @@ Der Ihanlt in den ifs kann geändert werden
 
       <!-- Wishlist -->
       <div class="carousel-item">
-        <div class="card mb-3 bg-dark text-white" style="max-width: 1620px; max-height: 500px; height: 500px; overflow-y: scroll;">
+        <div class="card mb-3 bg-dark text-white" style="width: 100vw; max-height: 500px; height: 500px; overflow-y: scroll;">
           <div class="card-body">
             <h5 class="card-title">Wishlist</h5>
             {#each form?.User1DataJson?.wishlist.response.items as game}
@@ -174,11 +174,11 @@ Der Ihanlt in den ifs kann geändert werden
 
     </div>
 
-    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+    <button class="carousel-control-prev" style="top: auto; bottom: 10px;" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
       <span class="carousel-control-prev-icon" aria-hidden="true"></span>
       <span class="visually-hidden">Previous</span>
     </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+    <button class="carousel-control-prev" style="top: auto; bottom: 10px;" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
       <span class="carousel-control-next-icon" aria-hidden="true"></span>
       <span class="visually-hidden">Next</span>
     </button>
