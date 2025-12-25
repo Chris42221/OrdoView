@@ -1,5 +1,5 @@
 // src/routes/+page.server.js
-import { error } from '@sveltejs/kit';
+import { error, redirect } from '@sveltejs/kit';
 
 // @ts-ignore
 export async function load({ fetch }) {
@@ -25,6 +25,7 @@ export async function load({ fetch }) {
 
   return { stats: json}; // wird als `data` an +page.svelte geliefert
 }
+
 
 /** @satisfies {import('./$types').Actions} */
 export const actions = {
@@ -55,6 +56,9 @@ export const actions = {
     const appid = form.get("AppID");
 
     console.log(appid);
+
+    //Leitet die AppID weiter und den User zur seite in /GetAppData
+    redirect(307, '/GetAppData');
     
   }
 };

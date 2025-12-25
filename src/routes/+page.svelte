@@ -22,7 +22,7 @@ Die jsonStats.users_online Zeigt die Aktuellen Online User als Zahl an zb 33,333
 {#if form?.success}
 	{#each form?.AppSearchResults.getappresults as app}
 		<form action="?/GetAppData" method="POST">
-			<input type="text" name="AppID" id="AppID" value={app.appid}>
+			<input type="text" name="AppID" id="AppID" value={app.appid} readonly>
 			<button type="submit">
 			<img src="{app.logo}" alt="gamelogo">
 		</button>
