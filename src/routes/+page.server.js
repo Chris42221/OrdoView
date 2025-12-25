@@ -51,8 +51,10 @@ export const actions = {
     return{AppSearchResults, success: true,};
 	},
   GetAppData: async (event)=>{
-    console.log("Test");
-    
+    const form = await event.request.formData();
+    const appid = form.get("AppID");
+
+    console.log(appid);
     
   }
 };
