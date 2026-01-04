@@ -13,8 +13,32 @@ export const actions = {
 
 		const AppData = await appdata.json();
 
+		// @ts-ignore	
+		const dlcs = AppData[appID].data.dlc;
+
+		//|| dlcs.length >= 0
+		const DLCDataArry = [];
+		if(dlcs && dlcs.length > 0){
+		console.log("-----------------");
+		console.log(dlcs.length);
+		for(var i = 0; i < dlcs.length; i++){
+			const dlcdata = await fetch(`https://store.steampowered.com/api/appdetails/?appids=${dlcs[i]}`);
+				if(!dlcdata.ok){
+					throw new Error(`Response status: ${dlcdata.status}`);
+                }
+			const DLCData = await dlcdata.json();
+			DLCDataArry.push(DLCData);
+		}
+		console.log("-----------------");
+		console.log(DLCDataArry);
+		}
+
+
+		
+
 		const appinformation = {
-			GetAppInformation: AppData
+			GetAppInformation: AppData,
+			GetDLCInformation: DLCDataArry,
 		}
 
 		console.log(appinformation);
