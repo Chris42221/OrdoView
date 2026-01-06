@@ -72,6 +72,10 @@ td:first-child {
     background-color: #010e1459;
 }
 
+.ad2:hover {
+    background-color: #010e147e;
+}
+
 .da {
     color: white;
 }
@@ -80,4 +84,8 @@ td:first-child {
     text-align: center;
     margin-top: 30px;
     margin-bottom: 30px;
+}
+
+.inv{
+    background-color: transparent;
 }

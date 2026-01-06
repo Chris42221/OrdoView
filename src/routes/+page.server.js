@@ -4,7 +4,6 @@ import { error, redirect } from '@sveltejs/kit';
 // @ts-ignore
 export async function load({ fetch }) {
   const resStats = await fetch('https://www.valvesoftware.com/about/stats');
-
   if (!resStats.ok) {
     // Versuche, die upstream-Antwort zu lesen (falls vorhanden) und gebe nützliche Debug-Informationen zurück.
     let body = null;
@@ -17,10 +16,16 @@ export async function load({ fetch }) {
     throw error(502, msg);
   }
 
+  const groupvanityinfo = await fetch('https://store.steampowered.com/events/ajaxgetnewscurators');
+  if(!groupvanityinfo.ok){
+    throw new Error(`Response status: ${groupvanityinfo.status}`);
+  }
+
   const statsJson = await resStats.json();
+  const groupvanityinfoJson = await groupvanityinfo.json();
 
 
-  const json = { stats: statsJson, };
+  const json = { stats: statsJson, groupinfo: groupvanityinfoJson};
   console.log(json);
 
   return { stats: json}; // wird als `data` an +page.svelte geliefert
