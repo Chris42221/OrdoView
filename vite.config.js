@@ -4,8 +4,7 @@ import { defineConfig } from 'vite';
 export default defineConfig({
 	plugins: [sveltekit()],
 	build: {
-		cssCodeSplit: false,
-		minify: 'terser'
+		cssCodeSplit: false
 	},
 	server: {
 		fs: {
