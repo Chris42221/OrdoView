@@ -74,9 +74,6 @@
     </div>
 </form>
 
-<!--
-Der Ihanlt in den ifs kann geändert werden
--->
 
 {#if form?.success}
   <div class="container-fluid px-2 px-md-4">
