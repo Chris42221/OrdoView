@@ -3,28 +3,6 @@
 
 	let { data, form } = $props();
 
-	// Azure-spezifische Carousel Initialisierung
-  /*
-	if (typeof document !== 'undefined') {
-		$effect(() => {
-			if (form?.success) {
-				setTimeout(() => {
-					const carousel = document.getElementById('carouselExample');
-					if (carousel && typeof window !== 'undefined' && window.bootstrap) {
-						try {
-							new window.bootstrap.Carousel(carousel, {
-								interval: false,
-								wrap: true,
-								touch: true
-							});
-						} catch (e) {
-							console.log('Carousel init failed:', e);
-						}
-					}
-				}, 500);
-			}
-		});
-	}*/
 </script>
 
 
@@ -126,7 +104,7 @@
 
           <!-- Friends List -->
           <div class="carousel-item">
-            <div class="card mb-3 da ad text-white" style="height: 500px; overflow: hidden;">
+            <div class="card mb-3 da ad text-white" style="height: 500px;">
               <div class="card-body p-2 p-md-3">
                 <h5 class="card-title mb-3">Friends List</h5>
                 <div style="height: 400px; overflow-y: auto; contain: layout style; will-change: scroll-position;" class="overflow-container">
@@ -150,7 +128,7 @@
 
           <!-- Games List -->
           <div class="carousel-item">
-            <div class="card mb-3 da ad text-white" style="height: 500px; overflow: hidden;">
+            <div class="card mb-3 da ad text-white" style="height: 500px;">
               <div class="card-body p-2 p-md-3">
                 <h5 class="card-title mb-3">Games Owned</h5>
                 <div style="height: 400px; overflow-y: auto; contain: layout style; will-change: scroll-position;" class="overflow-container">
@@ -174,7 +152,7 @@
 
           <!-- Recently Played Games -->
           <div class="carousel-item">
-            <div class="card mb-3 da ad text-white" style="height: 500px; overflow: hidden;">
+            <div class="card mb-3 da ad text-white" style="height: 500px;">
               <div class="card-body p-2 p-md-3">
                 <h5 class="card-title mb-3">Recently Played Games</h5>
                 <div style="height: 400px; overflow-y: auto;">
@@ -215,7 +193,7 @@
 
           <!-- Wishlist -->
           <div class="carousel-item">
-            <div class="card mb-3 da ad text-white" style="height: 500px; overflow: hidden;">
+            <div class="card mb-3 da ad text-white" style="height: 500px;">
               <div class="card-body p-2 p-md-3">
                 <h5 class="card-title mb-3">Wishlist</h5>
                 <div style="height: 400px; overflow-y: auto; contain: layout style; will-change: scroll-position;" class="overflow-container">
