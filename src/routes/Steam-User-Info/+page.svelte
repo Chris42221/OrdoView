@@ -1,7 +1,29 @@
 <script>
 	/** @type {import('./$types').PageProps} */
 
-	let { data, form } = $props(); //Im form befinden sich die Daten von der API
+	let { data, form } = $props();
+
+	// Azure-spezifische Carousel Initialisierung
+	if (typeof document !== 'undefined') {
+		$effect(() => {
+			if (form?.success) {
+				setTimeout(() => {
+					const carousel = document.getElementById('carouselExample');
+					if (carousel && typeof window !== 'undefined' && window.bootstrap) {
+						try {
+							new window.bootstrap.Carousel(carousel, {
+								interval: false,
+								wrap: true,
+								touch: true
+							});
+						} catch (e) {
+							console.log('Carousel init failed:', e);
+						}
+					}
+				}, 500);
+			}
+		});
+	}
 </script>
 
 
