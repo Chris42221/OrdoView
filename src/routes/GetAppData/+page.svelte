@@ -14,33 +14,33 @@ Zeigt die Daten der API an
 -->
 {#if form?.success && form?.appid && typeof form?.appid === 'string'}
      <div class="container-fluid px-2 px-md-4 mt-4">
-        <div class="card inv">
+        <div class="card inv custom">
             <!-- Game Header -->
-            <div class="card-body mx-2 mx-md-3 mb-3 ad">
+            <div class="card-body mx-2 mx-md-3 mb-3 ad custom">
                 <div class="row g-3">
                     <div class="col-12 col-md-4 col-lg-3">
                         <img src="{form?.appinformation.GetAppInformation[form?.appid].data.header_image}" class="img-fluid rounded" alt="{form?.appinformation.GetAppInformation[form?.appid].data.name}">
                     </div>
                     <div class="col-12 col-md-8 col-lg-9">
-                        <h4 class="card-title mb-3 da">{form?.appinformation.GetAppInformation[form?.appid].data.name}</h4>
+                        <h4 class="card-title mb-3 da custom">{form?.appinformation.GetAppInformation[form?.appid].data.name}</h4>
                         <div class="mb-3">
                             <a href='https://store.steampowered.com/app/{form?.appinformation.GetAppInformation[form?.appid].data.steam_appid}' target="_blank" class="btn btn-primary btn-sm">🛒 Steam Store</a>
                         </div>
                         <div class="mb-3">
                             {#each form?.appinformation.GetAppInformation[form?.appid].data.genres as genre}
-                                <span class="badge bg-info me-1 mb-1 da" style="border-radius: 15px; padding: 5px 12px; font-size: 0.8em;">{genre.description}</span>
+                                <span class="badge bg-info me-1 mb-1 da custom" style="border-radius: 15px; padding: 5px 12px; font-size: 0.8em;">{genre.description}</span>
                             {/each}
                         </div>
                         <div class="row g-2">
                             <div class="col-12 col-sm-6">
-                                <p class="card-text mb-1 da"><strong>App ID:</strong> {form?.appinformation.GetAppInformation[form?.appid].data.steam_appid}</p>
+                                <p class="card-text mb-1 da custom"><strong>App ID:</strong> {form?.appinformation.GetAppInformation[form?.appid].data.steam_appid}</p>
                             </div>
                             <div class="col-12 col-sm-6">
-                                <p class="card-text mb-1 da"><strong>Release Date:</strong> {form?.appinformation.GetAppInformation[form?.appid].data.release_date.date}</p>
+                                <p class="card-text mb-1 da custom"><strong>Release Date:</strong> {form?.appinformation.GetAppInformation[form?.appid].data.release_date.date}</p>
                             </div>
                             {#if form?.appinformation.GetAppInformation[form?.appid].data.price_overview}
                                 <div class="col-12">
-                                    <p class="card-text mb-1 da"><strong>Price:</strong> <span class="text-success fw-bold">{form?.appinformation.GetAppInformation[form?.appid].data.price_overview.final_formatted}</span></p>
+                                    <p class="card-text mb-1 da custom"><strong>Price:</strong> <span class="text-success fw-bold">{form?.appinformation.GetAppInformation[form?.appid].data.price_overview.final_formatted}</span></p>
                                 </div>
                             {/if}
                         </div>
@@ -50,7 +50,7 @@ Zeigt die Daten der API an
             
             <!-- Screenshots Carousel -->
             {#if form?.appinformation.GetAppInformation[form?.appid].data.screenshots}
-                <div class="card mx-2 mx-md-3 mb-3 ad">
+                <div class="card mx-2 mx-md-3 mb-3 ad custom">
                     <div class="card-header">
                         <button class="btn btn-link p-0 text-decoration-none text-dark fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#screenshotsCollapse">
                             Screenshots
@@ -81,7 +81,7 @@ Zeigt die Daten der API an
             {/if}
             
             <!-- Description Card -->
-            <div class="card mx-2 mx-md-3 mb-3 ad">
+            <div class="card mx-2 mx-md-3 mb-3 ad custom">
                 <div class="card-header">
                     <button class="btn btn-link p-0 text-decoration-none text-dark fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#descriptionCollapse">
                         Description
@@ -89,14 +89,14 @@ Zeigt die Daten der API an
                 </div>
                 <div class="collapse show" id="descriptionCollapse">
                     <div class="card-body p-2 p-md-3">
-                        <p class="card-text lh-base da">{form?.appinformation.GetAppInformation[form?.appid].data.short_description}</p>
+                        <p class="card-text lh-base da custom">{form?.appinformation.GetAppInformation[form?.appid].data.short_description}</p>
                     </div>
                 </div>
             </div>
             
             <!-- Achievements Card -->
             {#if form?.appinformation.GetAppInformation[form?.appid].data.achievements}
-                <div class="card mx-2 mx-md-3 mb-3 ad">
+                <div class="card mx-2 mx-md-3 mb-3 ad custom">
                     <div class="card-header">
                         <button class="btn btn-link p-0 text-decoration-none text-dark fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#achievementsCollapse">
                             Achievements ({form?.appinformation.GetAppInformation[form?.appid].data.achievements.total})
@@ -107,9 +107,9 @@ Zeigt die Daten der API an
                             <div class="row g-2 g-md-3">
                                 {#each form?.appinformation.GetAppInformation[form?.appid].data.achievements.highlighted as achievement}
                                     <div class="col-6 col-sm-4 col-md-3 col-lg-2">
-                                        <div class="text-center p-2 border rounded bg-lightad ad2">
+                                        <div class="text-center p-2 border rounded bg-lightad ad2 custom">
                                             <img src="{achievement.path}" class="mb-2" style="width: 48px; height: 48px;" alt="{achievement.name}">
-                                            <p class="small mb-0 text-truncate da" title="{achievement.name}">{achievement.name}</p>
+                                            <p class="small mb-0 text-truncate da custom" title="{achievement.name}">{achievement.name}</p>
                                         </div>
                                     </div>
                                 {/each}
@@ -120,7 +120,7 @@ Zeigt die Daten der API an
             {/if}
             
             <!-- System Requirements Card -->
-            <div class="card mx-2 mx-md-3 mb-3 ad">
+            <div class="card mx-2 mx-md-3 mb-3 ad custom">
                 <div class="card-header">
                     <button class="btn btn-link p-0 text-decoration-none text-dark fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#requirementsCollapse">
                         System Requirements
@@ -130,12 +130,12 @@ Zeigt die Daten der API an
                     <div class="card-body p-2 p-md-3">
                         <div class="row g-3">
                             <div class="col-12 col-lg-6">
-                                <h6 class="text-primary da">Minimum:</h6>
-                                <div class="small ad ad2 p-2 rounded">{@html form?.appinformation.GetAppInformation[form?.appid].data.pc_requirements.minimum}</div>
+                                <h6 class="text-primary da custom">Minimum:</h6>
+                                <div class="small ad custom ad2 custom p-2 da custom rounded">{@html form?.appinformation.GetAppInformation[form?.appid].data.pc_requirements.minimum}</div>
                             </div>
                             <div class="col-12 col-lg-6">
-                                <h6 class="text-success da">Recommended:</h6>
-                                <div class="small ad ad2 p-2 rounded">{@html form?.appinformation.GetAppInformation[form?.appid].data.pc_requirements.recommended}</div>
+                                <h6 class="text-success da custom">Recommended:</h6>
+                                <div class="small ad custom ad2 custom da custom p-2 rounded">{@html form?.appinformation.GetAppInformation[form?.appid].data.pc_requirements.recommended}</div>
                             </div>
                         </div>
                     </div>
@@ -144,7 +144,7 @@ Zeigt die Daten der API an
             
             <!-- DLCs Card -->
             {#if form?.appinformation.GetDLCInformation && form?.appinformation.GetDLCInformation.length > 0}
-                <div class="card mx-2 mx-md-3 mb-3 ad">
+                <div class="card mx-2 mx-md-3 mb-3 ad custom">
                     <div class="card-header">
                         <button class="btn btn-link p-0 text-decoration-none text-dark fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#dlcsCollapse">
                             DLCs
@@ -155,13 +155,13 @@ Zeigt die Daten der API an
                             <div class="row g-2 g-md-3">
                                 {#each form?.appinformation.GetAppInformation[form?.appid].data.dlc as dlcId, index}
                                     <div class="col-12 col-sm-6 col-lg-4">
-                                        <div class="card h-100 shadow-sm ad ad2">
+                                        <div class="card h-100 shadow-sm ad custom ad2 custom">
                                             <a href='https://store.steampowered.com/app/{dlcId}' target="_blank" class="text-decoration-none">
                                                 <img src="{form?.appinformation.GetDLCInformation[index][dlcId].data.capsule_image}" class="card-img-top" style="height: 150px; object-fit: cover;" alt="{form?.appinformation.GetDLCInformation[index][dlcId].data.name}">
                                             </a>
                                             <div class="card-body">
-                                                <h6 class="card-title da">{form?.appinformation.GetDLCInformation[index][dlcId].data.name}</h6>
-                                                <p class="card-text da"><small class="text-muted">ID: {dlcId}</small></p>
+                                                <h6 class="card-title da custom">{form?.appinformation.GetDLCInformation[index][dlcId].data.name}</h6>
+                                                <p class="card-text da custom"><small class="text-muted">ID: {dlcId}</small></p>
                                             </div>
                                         </div>
                                     </div>
@@ -174,7 +174,7 @@ Zeigt die Daten der API an
             
             <!-- Support Information Card -->
             {#if form?.appinformation.GetAppInformation[form?.appid].data.support_info}
-                <div class="card m-3 ad">
+                <div class="card m-3 ad custom">
                     <div class="card-header">
                         <button class="btn btn-link p-0 text-decoration-none text-dark fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#supportCollapse">
                             Support Information
@@ -183,10 +183,10 @@ Zeigt die Daten der API an
                     <div class="collapse show" id="supportCollapse">
                         <div class="card-body">
                             {#if form?.appinformation.GetAppInformation[form?.appid].data.support_info.url}
-                                <p class="card-text da"><strong>Support Website:</strong> <a href="{form?.appinformation.GetAppInformation[form?.appid].data.support_info.url}" target="_blank">{form?.appinformation.GetAppInformation[form?.appid].data.support_info.url}</a></p>
+                                <p class="card-text da custom"><strong>Support Website:</strong> <a href="{form?.appinformation.GetAppInformation[form?.appid].data.support_info.url}" target="_blank">{form?.appinformation.GetAppInformation[form?.appid].data.support_info.url}</a></p>
                             {/if}
                             {#if form?.appinformation.GetAppInformation[form?.appid].data.support_info.email}
-                                <p class="card-text da"><strong>Support Email:</strong> <a href="mailto:{form?.appinformation.GetAppInformation[form?.appid].data.support_info.email}">{form?.appinformation.GetAppInformation[form?.appid].data.support_info.email}</a></p>
+                                <p class="card-text da custom"><strong>Support Email:</strong> <a href="mailto:{form?.appinformation.GetAppInformation[form?.appid].data.support_info.email}">{form?.appinformation.GetAppInformation[form?.appid].data.support_info.email}</a></p>
                             {/if}
                         </div>
                     </div>

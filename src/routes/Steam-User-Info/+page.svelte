@@ -63,7 +63,7 @@ Der Ihanlt in den ifs kann geändert werden
         <div class="carousel-inner">
           <!-- User Info Card -->
           <div class="carousel-item active">
-            <div class="card mb-3 da ad text-white" style="height: 500px;">
+            <div class="card mb-3 da custom ad custom text-white" style="height: 500px;">
               <div class="row g-0 h-100">
                 <div class="col-12 col-md-4 d-flex align-items-center justify-content-center p-3">
                   <img src="{form?.User1DataJson?.stats.response.players[0].avatarmedium}" class="img-fluid rounded" style="max-width: 150px;" alt="ProfilePicture">
@@ -74,27 +74,27 @@ Der Ihanlt in den ifs kann geändert werden
                     <div class="row g-2">
                       <div class="col-12">
                         <a href="{form?.User1DataJson?.stats.response.players[0].profileurl}" target="_blank" class="text-decoration-none">
-                          <p class="card-text fs-6 mb-2">ID: {form?.User1DataJson?.stats.response.players[0].steamid}</p>
+                          <p class="card-text fs-6 mb-2 da custom">ID: {form?.User1DataJson?.stats.response.players[0].steamid}</p>
                         </a>
                       </div>
                       <div class="col-12 col-sm-6">
-                        <p class="card-text fs-6 mb-2">Name: {form?.User1DataJson?.stats.response.players[0].personaname}</p>
+                        <p class="card-text fs-6 mb-2 da custom">Name: {form?.User1DataJson?.stats.response.players[0].personaname}</p>
                       </div>
                       <div class="col-12 col-sm-6">
                         <p class="card-text text-muted mb-2">{form?.User1DataJson?.stats.response.players[0].realname || 'N/A'}</p>
                       </div>
                       <div class="col-12 col-sm-6">
-                        <p class="card-text fs-6 mb-2">Location: {form?.User1DataJson?.stats.response.players[0].loccountrycode || 'N/A'}</p>
+                        <p class="card-text fs-6 mb-2 da custom">Location: {form?.User1DataJson?.stats.response.players[0].loccountrycode || 'N/A'}</p>
                       </div>
                       <div class="col-12 col-sm-6">
-                        <p class="card-text fs-6 mb-2">Level: {form?.User1DataJson?.level.response.player_level}</p>
+                        <p class="card-text fs-6 mb-2 da custom">Level: {form?.User1DataJson?.level.response.player_level}</p>
                       </div>
                       <div class="col-12 col-sm-6">
-                        <p class="card-text fs-6 mb-2">Badges: {form?.User1DataJson?.badgeslength}</p>
+                        <p class="card-text fs-6 mb-2 da custom">Badges: {form?.User1DataJson?.badgeslength}</p>
                       </div>
                       {#if form?.success && form?.User1DataJson?.grouplist.response.success}
                         <div class="col-12 col-sm-6">
-                          <p class="card-text fs-6 mb-2">Groups: {form?.User1DataJson?.grouplist.response.groups.length}</p>
+                          <p class="card-text fs-6 mb-2 da custom">Groups: {form?.User1DataJson?.grouplist.response.groups.length}</p>
                         </div>
                       {/if}
                     </div>
@@ -106,17 +106,17 @@ Der Ihanlt in den ifs kann geändert werden
 
           <!-- Friends List -->
           <div class="carousel-item">
-            <div class="card mb-3 da ad text-white" style="height: 500px; overflow: hidden;">
+            <div class="card mb-3 da custom ad custom text-white" style="height: 500px; overflow: hidden;">
               <div class="card-body p-2 p-md-3">
                 <h5 class="card-title mb-3">Friends List</h5>
                 <div style="height: 400px; overflow-y: auto;">
                   <div class="list-group">
                     {#each form?.User1DataJson?.friendsdata as friend (friend.response.players[0].steamid)}
-                      <a href="{friend.response.players[0].profileurl}" class="list-group-item list-group-item-action ad ad2 da text-light mb-2" target="_blank">
+                      <a href="{friend.response.players[0].profileurl}" class="list-group-item list-group-item-action ad custom ad2 custom da custom text-light mb-2" target="_blank">
                         <div class="d-flex align-items-center">
                           <img src="{friend.response.players[0].avatarmedium}" alt="ProfilePicture" class="rounded-circle me-3" style="width: 40px; height: 40px; flex-shrink: 0;">
                           <div class="flex-grow-1 min-w-0">
-                            <p class="m-0 fs-6 text-truncate">{friend.response.players[0].personaname}</p>
+                            <p class="m-0 fs-6 text-truncate da custom">{friend.response.players[0].personaname}</p>
                             <small class="text-muted text-truncate d-block">{friend.response.players[0].realname || 'No real name'}</small>
                           </div>
                         </div>
@@ -130,17 +130,17 @@ Der Ihanlt in den ifs kann geändert werden
 
           <!-- Games List -->
           <div class="carousel-item">
-            <div class="card mb-3 da ad text-white" style="height: 500px; overflow: hidden;">
+            <div class="card mb-3 da custom ad custom text-white" style="height: 500px; overflow: hidden;">
               <div class="card-body p-2 p-md-3">
                 <h5 class="card-title mb-3">Games Owned</h5>
                 <div style="height: 400px; overflow-y: auto;">
                   <div class="row g-2">
                     {#each form?.User1DataJson?.ownedgames.response.games as game}
                       <div class="col-12 col-sm-6 col-lg-4">
-                        <div class="card ad ad2">
+                        <div class="card ad custom ad2 custom">
                           <div class="card-body p-2">
                             <a href="https://store.steampowered.com/app/{game.appid}" target="_blank" class="text-decoration-none">
-                              <h6 class="card-title small text-truncate">{game.name}</h6>
+                              <h6 class="card-title small text-truncate da custom">{game.name}</h6>
                             </a>
                           </div>
                         </div>
@@ -154,7 +154,7 @@ Der Ihanlt in den ifs kann geändert werden
 
           <!-- Recently Played Games -->
           <div class="carousel-item">
-            <div class="card mb-3 da ad text-white" style="height: 500px; overflow: hidden;">
+            <div class="card mb-3 da custom ad custom text-white" style="height: 500px; overflow: hidden;">
               <div class="card-body p-2 p-md-3">
                 <h5 class="card-title mb-3">Recently Played Games</h5>
                 <div style="height: 400px; overflow-y: auto;">
@@ -168,15 +168,15 @@ Der Ihanlt in den ifs kann geändert werden
                             <div class="table-responsive">
                               <table class="table table-sm text-white">
                                 <tbody>
-                                  <tr class="ad2">
+                                  <tr class="ad2 custom">
                                     <td class="border-0 p-1">Playtime last 2 Weeks:</td>
                                     <td class="border-0 p-1">{Math.round(game.playtime_2weeks / 60 * 10) / 10}h</td>
                                   </tr>
-                                  <tr class="ad2">
+                                  <tr class="ad2 custom">
                                     <td class="border-0 p-1">Total Playtime:</td>
                                     <td class="border-0 p-1">{Math.round(game.playtime_forever / 60 * 10) / 10}h</td>
                                   </tr>
-                                  <tr class="ad2">
+                                  <tr class="ad2 custom">
                                     <td class="border-0 p-1">Release Date:</td>
                                     <td class="border-0 p-1 small">{form?.User1DataJson?.recentplayedgamesarray[form?.User1DataJson?.recentplayedgames.response.games.indexOf(game)][game.appid]?.data?.release_date.date}</td>
                                   </tr>
@@ -195,20 +195,20 @@ Der Ihanlt in den ifs kann geändert werden
 
           <!-- Wishlist -->
           <div class="carousel-item">
-            <div class="card mb-3 da ad text-white" style="height: 500px; overflow: hidden;">
+            <div class="card mb-3 da custom ad custom text-white" style="height: 500px; overflow: hidden;">
               <div class="card-body p-2 p-md-3">
                 <h5 class="card-title mb-3">Wishlist</h5>
                 <div style="height: 400px; overflow-y: auto;">
                   {#each form?.User1DataJson?.wishlist.response.items as game}
-                    <div class="card mb-3 ad ad2">
+                    <div class="card mb-3 ad custom ad2 custom">
                       <div class="card-body p-2 p-md-3">
                         <div class="row g-2 align-items-center">
                           <div class="col-12 col-sm-8">
-                            <p class="da mb-1 fw-bold">{form?.User1DataJson?.wishlistarray[form?.User1DataJson?.wishlist.response.items.indexOf(game)][game.appid]?.data?.name}</p>
+                            <p class="da custom mb-1 fw-bold">{form?.User1DataJson?.wishlistarray[form?.User1DataJson?.wishlist.response.items.indexOf(game)][game.appid]?.data?.name}</p>
                             {#if form?.User1DataJson?.wishlistarray[form?.User1DataJson?.wishlist.response.items.indexOf(game)][game.appid]?.data?.price_overview?.final_formatted}
-                              <p class="da mb-0 text-success">{form?.User1DataJson?.wishlistarray[form?.User1DataJson?.wishlist.response.items.indexOf(game)][game.appid]?.data?.price_overview?.final_formatted}</p>
+                              <p class="da custom mb-0 text-success">{form?.User1DataJson?.wishlistarray[form?.User1DataJson?.wishlist.response.items.indexOf(game)][game.appid]?.data?.price_overview?.final_formatted}</p>
                             {:else}
-                              <p class="da mb-0 text-info">Free / TBA</p>
+                              <p class="da custom mb-0 text-info">Free / TBA</p>
                             {/if}
                             
                           </div>
