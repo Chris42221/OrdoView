@@ -9,5 +9,6 @@ declare global {
 		// interface Platform {}
 	}
 }
+import './app.css';
 
 export {};
