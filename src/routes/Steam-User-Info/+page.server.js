@@ -49,7 +49,7 @@ export const actions = {
             throw new Error(`Response status: ${steamid1grouplist.status}`);
         }
 
-        const steamid1recentlyplayedgames = await fetch(`https://api.steampowered.com/IPlayerService/GetRecentlyPlayedGames/v1?key=${KEY}&steamid=${steamid1}&count=3`);
+        const steamid1recentlyplayedgames = await fetch(`https://api.steampowered.com/IPlayerService/GetRecentlyPlayedGames/v1?key=${KEY}&steamid=${steamid1}&count=4`);
         if(!steamid1recentlyplayedgames.ok){
             return { User1DataJson, success: false, error: true};
             throw new Error(`Response status: ${steamid1recentlyplayedgames.status}`);

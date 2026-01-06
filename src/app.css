@@ -22,16 +22,6 @@ h2 {
     text-shadow: 0 0 8px rgba(208, 193, 255, 0.4);
 }
 
-nav {
-    background-color: #000000;
-    font-size: 1.1rem;
-    line-height: 1.6;
-    margin: 0;              /* kein Abstand oben */
-    width: 100%;            /* volle Breite */
-    text-align: center;
-    padding: 15px 0;        /* Platz oben/unten */
-}
-
 a {
     color: #b899ff;                 /* Helles Lila */
     text-decoration: none;          /* Unterstreichung entfernen */
@@ -71,10 +61,31 @@ td:first-child {
 }
 
 #logo {
-    background-color: #000000;
     font-size: 1.1rem;
     line-height: 1.6;
     width: 20;            /* volle Breite */
     text-align: left;
     padding: 15px 0;        /* Platz oben/unten */
+}
+
+.ad {
+    background-color: #010e1459;
+}
+
+.ad2:hover {
+    background-color: #010e147e;
+}
+
+.da {
+    color: white;
+}
+
+.form_für_steam_user_info {
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.inv{
+    background-color: transparent;
 }
