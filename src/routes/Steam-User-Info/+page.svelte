@@ -4,6 +4,7 @@
 	let { data, form } = $props();
 
 	// Azure-spezifische Carousel Initialisierung
+  /*
 	if (typeof document !== 'undefined') {
 		$effect(() => {
 			if (form?.success) {
@@ -23,7 +24,7 @@
 				}, 500);
 			}
 		});
-	}
+	}*/
 </script>
 
 
@@ -128,12 +129,12 @@
             <div class="card mb-3 da ad text-white" style="height: 500px; overflow: hidden;">
               <div class="card-body p-2 p-md-3">
                 <h5 class="card-title mb-3">Friends List</h5>
-                <div style="height: 400px; overflow-y: auto;">
+                <div style="height: 400px; overflow-y: auto; contain: layout style; will-change: scroll-position;" class="overflow-container">
                   <div class="list-group">
-                    {#each form?.User1DataJson?.friendsdata as friend (friend.response.players[0].steamid)}
+                    {#each form?.User1DataJson?.friendsdata || [] as friend (friend.response.players[0].steamid)}
                       <a href="{friend.response.players[0].profileurl}" class="list-group-item list-group-item-action ad ad2 da text-light mb-2" target="_blank">
                         <div class="d-flex align-items-center">
-                          <img src="{friend.response.players[0].avatarmedium}" alt="ProfilePicture" class="rounded-circle me-3" style="width: 40px; height: 40px; flex-shrink: 0;">
+                          <img src="{friend.response.players[0].avatarmedium}" alt="ProfilePicture" class="rounded-circle me-3" style="width: 40px; height: 40px; flex-shrink: 0;" loading="lazy">
                           <div class="flex-grow-1 min-w-0">
                             <p class="m-0 fs-6 text-truncate">{friend.response.players[0].personaname}</p>
                             <small class="text-muted text-truncate d-block">{friend.response.players[0].realname || 'No real name'}</small>
@@ -152,14 +153,14 @@
             <div class="card mb-3 da ad text-white" style="height: 500px; overflow: hidden;">
               <div class="card-body p-2 p-md-3">
                 <h5 class="card-title mb-3">Games Owned</h5>
-                <div style="height: 400px; overflow-y: auto;">
+                <div style="height: 400px; overflow-y: auto; contain: layout style; will-change: scroll-position;" class="overflow-container">
                   <div class="row g-2">
-                    {#each form?.User1DataJson?.ownedgames.response.games as game}
+                    {#each form?.User1DataJson?.ownedgames.response.games || [] as game}
                       <div class="col-12 col-sm-6 col-lg-4">
                         <div class="card ad ad2">
                           <div class="card-body p-2">
                             <a href="https://store.steampowered.com/app/{game.appid}" target="_blank" class="text-decoration-none">
-                              <h6 class="card-title small text-truncate">{game.name}</h6>
+                              <h6 class="card-title small text-truncate da">{game.name}</h6>
                             </a>
                           </div>
                         </div>
@@ -217,8 +218,8 @@
             <div class="card mb-3 da ad text-white" style="height: 500px; overflow: hidden;">
               <div class="card-body p-2 p-md-3">
                 <h5 class="card-title mb-3">Wishlist</h5>
-                <div style="height: 400px; overflow-y: auto;">
-                  {#each form?.User1DataJson?.wishlist.response.items as game}
+                <div style="height: 400px; overflow-y: auto; contain: layout style; will-change: scroll-position;" class="overflow-container">
+                  {#each form?.User1DataJson?.wishlist.response.items || [] as game}
                     <div class="card mb-3 ad ad2">
                       <div class="card-body p-2 p-md-3">
                         <div class="row g-2 align-items-center">
@@ -229,11 +230,10 @@
                             {:else}
                               <p class="da mb-0 text-info">Free / TBA</p>
                             {/if}
-                            
                           </div>
                           <div class="col-12 col-sm-4 text-center text-sm-end">
                             <a href="https://store.steampowered.com/app/{game.appid}" target="_blank">
-                              <img src="{form?.User1DataJson?.wishlistarray[form?.User1DataJson?.wishlist.response.items.indexOf(game)][game.appid]?.data?.capsule_image}" alt="{form?.User1DataJson?.wishlistarray[form?.User1DataJson?.wishlist.response.items.indexOf(game)][game.appid]?.data?.name} Capsule Image" class="img-fluid" style="max-width: 120px;">
+                              <img src="{form?.User1DataJson?.wishlistarray[form?.User1DataJson?.wishlist.response.items.indexOf(game)][game.appid]?.data?.capsule_image}" alt="{form?.User1DataJson?.wishlistarray[form?.User1DataJson?.wishlist.response.items.indexOf(game)][game.appid]?.data?.name} Capsule Image" class="img-fluid" style="max-width: 120px;" loading="lazy">
                             </a>
                           </div>
                         </div>
